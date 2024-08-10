@@ -1,0 +1,302 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script type = 'module' src = "IzziCode.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Top Bar</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            overflow-x: hidden;
+        }
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: white;
+            border-bottom: 1px solid #ddd;
+        }
+        .topbar .left {
+            display: flex;
+            align-items: center;
+            margin-left: 10%;
+        }
+        .topbar .left img {
+            height: 60px;
+            margin-right: 20px;
+        }
+        .topbar .leftText a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: black;
+        }
+        .topbar .right {
+            display: flex;
+            align-items: center;
+            margin-right: 10%;
+        }
+        .topbar .right input {
+            border: 1px solid #ccc;
+            padding: 5px;
+            margin-right: 10px;
+            border-radius: 3px;
+        }
+        .topbar .right button {
+            background-color: #6200ea;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+        }
+        .container {
+            text-align: center;
+            padding: 50px;
+            background-color: #f7f0ff;
+            position: relative;
+        }
+        .container h1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 40px;
+        }
+        .container img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 10px;
+            margin: 0 10px;
+        }
+        .decorative-circle {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            width: 50px;
+            height: 50px;
+            background-color: #ff9800;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+        .decorative-arc {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 150px;
+            height: 150px;
+            background-color: #9b79c1;
+            border-radius: 50%;
+            transform: translate(-50%, -25%);
+            overflow: hidden;
+        }
+        .decorative-arc2{
+            position: absolute;
+            bottom: 0;
+            width: 150px;
+            height: 150px;
+            background-color: #9b79c1;
+            border-radius: 50%;
+            transform: translate(+50%, -25%);
+            right: 0;
+            overflow: hidden;
+        }
+        #services{
+            display:grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            margin-bottom: 20px;
+        }
+
+        .service > span{
+            float:left;
+            width: 100%;
+        }
+        .service > div> img{
+            width:100%;
+            border-radius: 10%;
+        }
+        .service >div{
+            margin: 10px;
+        }
+        footer {
+            background-color: #f8f8f8;
+            padding: 20px 0;
+        }
+
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+
+        .footer-left, .footer-middle, .footer-right, .footer-extra {
+            width: 24%;
+        }
+
+        .footer-left img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .footer-left p {
+            color: #555;
+        }
+
+        .footer-middle, .footer-right, .footer-extra {
+            color: #555;
+        }
+
+        .footer-middle h3, .footer-right h3, .footer-extra h3 {
+            margin-bottom: 10px;
+        }
+
+        .footer-middle p, .footer-right ul, .footer-extra ul {
+            margin: 5px 0;
+        }
+
+        .footer-right ul, .footer-extra ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .footer-right ul li, .footer-extra ul li {
+            margin-bottom: 5px;
+        }
+
+        .footer-right ul li a, .footer-extra ul li a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #ddd;
+            padding-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .social-icons a {
+            margin-right: 15px;
+        }
+
+        .social-icons img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .footer-copyright {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-copyright p {
+            margin-right: 15px;
+        }
+
+        .footer-copyright ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            margin: 0;
+        }
+
+        .footer-copyright ul li {
+            margin-right: 10px;
+        }
+
+        .footer-copyright ul li a {
+            text-decoration: none;
+            color: #555;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="topbar">
+        <div class="left">
+            <img src="Group 26295.png" alt="Logo 1">
+            <div class = "leftText">
+                <a href="#">My Orders</a>
+                <a href="#">Help</a>
+                <a href="#">Services</a>
+            </div>
+        </div>
+        <div class="right">
+            <input type="text" placeholder="Search">
+            <button>Sign in</button>
+            <button>Sign up</button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="decorative-circle"></div>
+        <div class="decorative-arc"></div>
+        <div class="decorative-arc2"></div>
+        <h1>Find your best</h1>
+    </div>
+    <div id = "services">
+
+    </div>
+    <div class="container">
+        <div class="decorative-circle"></div>
+        <div class="decorative-arc"></div>
+        <div class="decorative-arc2"></div>
+        <h1>Download the Izzi Mobile App</h1>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <img src="Group 26295.png" alt="Izzi Logo">
+                <p>Izzi is the major platform in Azerbaijan to request help from taskers</p>
+            </div>
+            <div class="footer-middle">
+                <h3>Izzi Ltd.</h3>
+                <p>Location address</p>
+                <p><a href="mailto:info@izzi.com">info@izzi.com</a></p>
+                <p>+994 (50) XX XXXX</p>
+                <p>NR2146561</p>
+            </div>
+            <div class="footer-right">
+                <h3>Book a service</h3>
+                <ul>
+                    <li><a href="#">Browse Services</a></li>
+                    <li><a href="#">Find Taskers</a></li>
+                    <li><a href="#">How does it work?</a></li>
+                </ul>
+            </div>
+            <div class="footer-extra">
+                <h3>Extra links</h3>
+                <ul>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">Become a Tasker</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="social-icons">
+                <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+                <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+                <a href="#"><img src="youtube-icon.png" alt="YouTube"></a>
+            </div>
+            <div class="footer-copyright">
+                <p>© Izzi Ltd. 2021</p>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms and conditions</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
